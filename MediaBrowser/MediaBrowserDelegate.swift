@@ -101,6 +101,8 @@ public protocol MediaBrowserDelegate: class {
      - Returns: Optional CGSize
      */
     func gridCellSize() -> CGSize?
+  
+  func selectedItemAtIndexPath(indexPath: IndexPath)
 }
 
 public extension MediaBrowserDelegate {
@@ -123,4 +125,6 @@ public extension MediaBrowserDelegate {
     func title(for mediaBrowser: MediaBrowser, at index: Int) -> String? { return nil }
     
     func gridCellSize() -> CGSize? { return nil }
+  
+  func selectedItemAtIndexPath(indexPath: IndexPath) { return }
 }
