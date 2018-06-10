@@ -137,10 +137,13 @@ class MediaGridViewController: UICollectionViewController, UICollectionViewDeleg
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let b = browser {
-            b.currentPhotoIndex = indexPath.row
-            b.hideGrid()
-        }
+//        if let b = browser {
+//            b.currentPhotoIndex = indexPath.row
+//            b.hideGrid()
+//        }
+      if let b = browser {
+        b.gridItemSelected(indexPath: indexPath)
+      }
     }
     
     override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
