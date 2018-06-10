@@ -1832,6 +1832,18 @@ public class MediaBrowser: UIViewController, UIScrollViewDelegate, UIActionSheet
             }
         }
     }
+  
+  func gridItemSelected(indexPath: IndexPath) {
+    delegate?.selectedItemAtIndexPath(indexPath: indexPath)
+  }
+  
+  public func showOnGrid(vc: UIViewController) {
+    if let gc = gridController {
+      gc.navigationController?.pushViewController(vc, animated: true)
+    } else {
+      print("error gc nil")
+    }
+  }
 
     func hideGrid() {
         if let gc = gridController {
